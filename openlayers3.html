@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Openlayers3</title>
+  <script src="./bower_components/openlayers3/build/ol.js"></script>
+  <link rel="stylesheet" href="./bower_components/openlayers3/css/ol.css">
+</head>
+<body>
+  <h2>My Map</h2>
+  <div id="map" class="map">
+  <script type="text/javascript">
+    var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.transform([130.558137, 31.583389], 'EPSG:4326', 'EPSG:3857'),
+          zoom: 15
+        })
+    });
+  </script>
+  </div>
+</body>
+</html>
